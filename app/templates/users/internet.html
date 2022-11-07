@@ -1,0 +1,28 @@
+{% extends "users/_base.html" %}
+
+{% set title = "Интернет" %}
+{% set description = "" %}
+{% set keywords = "ТелеТайм, Интернет, доступ, Internet, шпд, широкополосный" %}
+
+{% set top_active = "users" %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/fa-socials.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/sm_icons.css') }}" />
+{% endblock %}
+
+{% block sidebar %}
+    <div id="sidebar">
+    {{ left_menu(left_links, 'internet')  }}
+    {% include 'pay_panel.html' %}
+    {% include 'tp_panel.html' %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% from "_parts/_snippets.html" import  sm_icon, fake_chat %}
+    {{ fake_chat(chat_data) }}
+{% endblock %}

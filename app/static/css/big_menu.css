@@ -1,0 +1,397 @@
+#big_menu {
+    height: 400px;
+    width: 715px;
+    background: url("../images/big_menu/bg.png") no-repeat;
+    position: relative;
+
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+#big_menu li,[class^="circle-"],.caption  {
+    position: absolute;
+    display: inline-block;
+}
+
+.bm-entry [class^="circle-"], .bm-entry:hover .circle-small {
+    border-radius: 100%;
+    display: inline-block;
+
+    background: rgb(221, 216, 216);
+    background: -moz-linear-gradient(146deg, #d8d8d8 15%, #fafafa 40%, white 100%);
+    background: -webkit-linear-gradient(146deg, #d8d8d8 15%, #fafafa 40%, white 100%);
+    background: linear-gradient(146deg, #d8d8d8 15%, #fafafa 40%, white 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ddd8d8', endColorstr='#ffffff', GradientType=1);
+
+    -webkit-box-shadow: 2px 2px 5px 0 #929292;
+    -moz-box-shadow: 2px 2px 5px 0 #929292;
+    box-shadow: 2px 2px 5px 0 #929292;
+}
+
+.bm-entry:hover .circle-big, .bm-entry .circle-small {
+    background: #036336;
+}
+
+.bm-entry:hover .circle-small {
+    -webkit-box-shadow: none;
+    -moz-box-shadow:  none;
+    box-shadow:  none;
+}
+
+.bm-entry .circle-small {
+    width: 26px;
+    height: 26px;
+
+    -webkit-box-shadow: 1px 1px 2px 0 #929292;
+    -moz-box-shadow:  1px 1px 2px 0 #929292;
+    box-shadow:  1px 1px 2px 0 #929292;
+}
+
+.bm-entry .caption {
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0 , 0, 0, 0.3);
+}
+
+.bm-entry:hover .caption {
+    color: white;
+}
+
+.bm-entry .caption span {
+    color: white;
+    font-size: 16pt;
+    margin-right: 8px;
+    line-height: 1.2;
+}
+
+.bm-entry:hover .caption span {
+    color: #036336;
+}
+
+.bm-entry .caption .cap-text {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.bm-entry:hover .caption span {
+    color: #036336;
+}
+
+.bm-entry .bme-icon {
+    display: block;
+    position: relative;
+    background: url("../images/menu_icons.png") no-repeat left bottom;
+    margin: auto;
+}
+
+.bm-entry .circle-icon .bme-icon {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    -khtml-transition: all 1s;
+    transition: all 1s;
+}
+
+.bm-entry:hover .circle-icon .bme-icon {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* ------------------------------------- */
+#bme_tariffs {
+    top: 185px;
+    left: 115px;
+}
+
+#bme_tariffs .circle-small {
+    top: 24px;
+    left: -10px;
+}
+
+#bme_tariffs .circle-big {
+    height: 102px;
+    width: 102px;
+}
+
+#bme_tariffs .circle-icon {
+    height: 59px;
+    width: 59px;
+    top: 56px;
+    left: 52px;
+}
+
+#bme_tariffs .caption {
+    top: 25px;
+    left: -3px;
+}
+
+#bme_tariffs .circle-icon .bme-icon {
+    width: 27px;
+    height: 43px;
+    background-position-x: -108px;
+    top: 8px;
+}
+/* ------------------------------------- */
+#bme_users {
+    top: 10px;
+    left: 31px;
+}
+
+#bme_users .circle-small {
+    top: 31px;
+    left: 2px;
+}
+
+#bme_users .circle-big {
+    height: 161px;
+    width: 161px;
+}
+
+#bme_users .circle-icon {
+    height: 85px;
+    width: 85px;
+    top: 75px;
+    left: 90px;
+}
+
+#bme_users .caption {
+    top: 31px;
+    left: 8px;
+}
+
+#bme_users .caption .cap-text {
+    padding: 5px 0 0 18px;
+}
+
+#bme_users .circle-icon .bme-icon {
+    width: 55px;
+    height: 52px;
+    background-position-x: -145px;
+    top: 17px;
+}
+/* ------------------------------------- */
+#bme_patriot {
+    top: 0;
+    left: 200px;
+}
+
+#bme_patriot .circle-small {
+    top: 24px;
+    left: -5px;
+}
+
+#bme_patriot .circle-big {
+    height: 125px;
+    width: 125px;
+}
+
+#bme_patriot .circle-icon {
+    height: 85px;
+    width: 85px;
+    top: 70px;
+    left: 33px;
+}
+
+#bme_patriot .caption {
+    top: 25px;
+    left: 20px;
+    text-indent: -2.5ex;
+}
+
+#bme_patriot .caption .cap-text {
+    padding: 5px 0 0 18px;
+}
+
+#bme_patriot .circle-icon .bme-icon {
+    width: 53px;
+    height: 52px;
+    background-position-x: -475px;
+    top: 19px;
+}
+/* ------------------------------------- */
+#bme_about {
+    top: 165px;
+    left: 241px;
+}
+
+#bme_about .circle-small {
+    top: 18px;
+    left: 13px;
+}
+
+#bme_about .circle-big {
+    height: 165px;
+    width: 165px;
+}
+
+#bme_about .circle-icon {
+    display: none;
+}
+
+#bme_about .caption {
+    top: 18px;
+    left: 18px;
+}
+
+#bme_about .caption .cap-text {
+    padding: 5px 0 0 27px;
+}
+
+#bme_about .circle-big .bme-icon {
+    width: 58px;
+    height: 59px;
+    background-position-x: -332px;
+    top: 80px;
+}
+/* ------------------------------------- */
+#bme_news {
+    top: 0;
+    left: 342px;
+}
+
+#bme_news .circle-small {
+    top: 63px;
+    left: -7px;
+}
+
+#bme_news .circle-big {
+    height: 124px;
+    width: 124px;
+}
+
+#bme_news .circle-icon {
+    display: none;
+}
+
+#bme_news .caption {
+    top: 64px;
+    left: -2px;
+}
+
+#bme_news .caption .cap-text {
+    padding: 5px 0 0 38px;
+}
+
+#bme_news .circle-big .bme-icon {
+    width: 50px;
+    height: 54px;
+    background-position-x: 0;
+    top: 10px;
+}
+/* ------------------------------------- */
+#bme_contacts {
+    top: 140px;
+    left: 408px;
+}
+
+#bme_contacts .circle-small {
+    top: 55px;
+    left: -4px;
+}
+
+#bme_contacts .circle-big {
+    height: 108px;
+    width: 108px;
+}
+
+#bme_contacts .circle-icon {
+    display: none;
+}
+
+#bme_contacts .caption {
+    top: 55px;
+    left: 1px;
+}
+
+#bme_contacts .caption .cap-text {
+    padding: 5px 0 0 27px;
+}
+
+#bme_contacts .circle-big .bme-icon {
+    width: 38px;
+    height: 38px;
+    background-position-x: -60px;
+    top: 17px;
+}
+/* ------------------------------------- */
+#bme_cctv {
+    top: 10px;
+    left: 492px;
+}
+
+#bme_cctv .circle-small {
+    top: 18px;
+    left: -2px;
+}
+
+#bme_cctv .circle-big {
+    height: 130px;
+    width: 130px;
+}
+
+#bme_cctv .circle-icon {
+    display: none;
+}
+
+#bme_cctv .caption {
+    top: 18px;
+    left: 23px;
+    text-indent: -2.5ex;
+}
+
+#bme_cctv .caption .cap-text {
+    padding: 5px 0 0 27px;
+}
+
+#bme_cctv .circle-big .bme-icon {
+    width: 65px;
+    height: 45px;
+    background-position-x: -400px;
+    top: 70px;
+}
+/* ------------------------------------- */
+#bme_connections {
+    top: 155px;
+    left: 525px;
+}
+
+#bme_connections .circle-small {
+    top: 26px;
+    left: 8px;
+}
+
+#bme_connections .circle-big {
+    height: 165px;
+    width: 165px;
+}
+
+#bme_connections .circle-icon {
+    display: none;
+}
+
+#bme_connections .caption {
+    top: 26px;
+    left: 13px;
+}
+
+#bme_connections .caption .cap-text {
+    padding: 5px 0 0 27px;
+}
+
+#bme_connections .circle-big .bme-icon {
+    width: 112px;
+    height: 81px;
+    background-position-x: -210px;
+    top: 55px;
+}

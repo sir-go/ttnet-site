@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/google-tag-head.js') }}"></script>
+    {# title - до 70 символов, нельзя использовать точку #}
+    <title>ТелеТайм {% if title %} - {{ title }} {% endif %}</title>
+
+    {# description - до 150 символов #}
+    {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+
+    {# keywords - из знаков пунктуации разрешена только запятая #}
+    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+
+    {% include "_parts/favicon.html" %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}"/>
+
+    {% block add_styles %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/top_menu.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/left_menu.css') }}" />
+        {% if mode in ['edit', 'admin'] %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+        {% endif %}
+    {% endblock %}
+
+    {% block add_head_scripts %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    {% endblock %}
+
+    {% include "_parts/metrics.html" %}
+
+</head>
+
+{% set links = [
+    {'name': 'users', 'href': 'users', 'cap_big': 'АБОНЕНТУ', 'text': 'Техподдержка<br>Оплата<br>Интернет<br>ТВ'},
+    {'name': 'tariffs', 'href': 'tariffs', 'cap_big': 'ТАРИФЫ'},
+    {'name': 'patriot', 'href': 'patriot', 'cap_big': 'ПАТРИОТ<br>ГОРОДА', 'cap_top': 'ПАТРИОТ ГОРОДА'},
+    {'name': 'about', 'href': 'about', 'cap_big': 'О КОМПАНИИ', 'cap_top': 'О&nbsp;КОМПАНИИ', 'text': 'Услуги'},
+    {'name': 'news', 'href': 'news', 'cap_big': 'НОВОСТИ', 'text': 'и Акции'},
+    {'name': 'contacts', 'href': 'contacts', 'cap_big': 'КОНТАКТЫ'},
+    {'name': 'cctv', 'href': 'cctv', 'cap_big': 'ВИДЕО<br>КОНТРОЛЬ', 'cap_top': 'ВИДЕОКОНТРОЛЬ'},
+    {'name': 'connections', 'href': 'connections', 'cap_big': 'ПОДКЛЮЧЕНИЕ'},
+] %}
+
+{% from "_parts/_snippets.html" import make_logo, top_menu %}
+
+{% block body %}
+<body>
+    <header>
+        {{ make_logo(True) }}
+        {{ top_menu(links, top_active or 'users') }}
+    </header>
+
+    <main>
+        {% block sidebar %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div id="footer-bg" class="ft-{{ request.endpoint }}">
+            {% block footer %}{% endblock %}
+        </div>
+        © ООО ТелеТайм {{ get_current_year() }}
+    </footer>
+
+    {% block add_scripts %}{% endblock %}
+
+    {% if mode in ['edit', 'admin'] %}
+        <div id="agent-ip" data-val="{{ agent_ip }}" hidden></div>
+        <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+    {% endif %}
+
+</body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,43 @@
+#content h2 {
+    border-top: 1px gray solid;
+}
+
+.help-topic-body {
+    text-align: justify;
+}
+
+.screeshot {
+    text-align: center;
+}
+
+.screeshot img {
+    box-shadow: 4px 4px 14px #9E9E9E;
+    border-radius: 4px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.help-topic-body ul, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.help-topic-body li {
+    padding-bottom: 10px;
+    line-height: 1.3;
+}
+
+samp {
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 0 7px;
+    font-family: monospace;
+    font-size: 11pt;
+}
+
+/*#pay_help {*/
+/*    display: none;*/
+/*}*/

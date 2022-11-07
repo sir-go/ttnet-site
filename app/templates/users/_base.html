@@ -1,0 +1,24 @@
+{% extends "_parts/_base.html" %}
+{% set title = "Абоненту" %}
+
+{% set description = "Полезная для абонентов ООО ТелеТайм информация о способах оплаты, технической поддержке и
+управлении сервисами компании" %}
+
+{% set keywords = "ТелеТайм, информация, абоненту, для абонетов, способы оплаты, оплата, телефон технической поддержки,
+техподдержка, саппорт, помощь, Сбербанк, visa, mastercard, карта МИР, пополнить баланс" %}
+
+{% set top_active = 'users' %}
+
+{% set left_links = [
+  {'text': 'Интернет', 'href': 'users_internet', 'name': 'internet'},
+  {'text': 'Кабельное ТВ', 'href': 'users_ctv', 'name': 'ctv'},
+  {'text': 'Помощь', 'href': 'users_help', 'name': 'help'}
+] %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('sberpay.static', filename='css/panel.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('trusted.static', filename='css/panel.css') }}" />
+{% endblock %}
+
+{% from "_parts/_snippets.html" import left_menu %}

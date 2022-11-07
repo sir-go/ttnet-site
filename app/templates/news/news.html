@@ -1,0 +1,39 @@
+{% extends "_parts/_base.html" %}
+{% set title = "Новости" %}
+
+{% set description = "Объявления о новых акциях, тарифах, плановых и внеплановых технических работах и прочих новостях
+и изменениях в услугах компании" %}
+
+{% set keywords = "ТелеТайм, новости, изменения в тарифах, акции, не работает, не показывает, профилактика, скидки" %}
+
+{% set top_active = 'news' %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/news_pan.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/fa-socials.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/sm_icons.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/tariffs.css') }}" />
+{% endblock %}
+
+{% from "_parts/_snippets.html" import news_pan, news_post %}
+
+{% block sidebar %}
+<div id="sidebar">
+    {{ news_pan(news_titles) }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+{% for post in news_posts %}
+    {{ news_post(post) }}
+{% endfor %}
+
+</div>
+{% endblock %}
+
+{% block add_scripts %}
+{% endblock %}

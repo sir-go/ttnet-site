@@ -1,0 +1,20 @@
+{% extends "_parts/_base.html" %}
+
+{% set top_active = 'tariffs' %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tariffs.css') }}"  />
+{% endblock %}
+
+{% set left_links = [
+  {'text': 'Интернет', 'href': 'tariffs_internet', 'name': 'internet'},
+  {'text': 'Кабельное ТВ', 'href': 'tariffs_ctv', 'name': 'ctv'},
+] %}
+{% from "_parts/_snippets.html" import left_menu %}
+
+{% block  sidebar %}
+<div id="sidebar">
+    {{ left_menu(left_links, left_active) }}
+</div>
+{% endblock %}

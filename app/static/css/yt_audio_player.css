@@ -1,0 +1,11 @@
+#youtube-audio {
+    height: 1.5rem;
+
+}
+
+#youtube-audio img {
+    width: 1.5rem;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}

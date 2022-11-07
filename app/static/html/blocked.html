@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Доступ заблокирован</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <style type="text/css">
+        body {
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+        }
+        .container {
+            width: 480px;
+            height: auto;
+            {#text-align: justify;#}
+        }
+        .pay_submit {
+            border-radius: 3px;
+            display: inline-block;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 16pt;
+            padding: 0 5px;
+        }
+        .pay_submit.red {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="width: 100%; text-align: center;">
+            <a id="logo" href="/">
+                <img src="/static/images/logo.svg" alt="ООО ТелеТайм">
+            </a>
+        </div>
+        <h1 style="text-align: center; text-indent: 0">Уважаемый абонент!</h1>
+
+        <p>
+            <b>Доступ</b> к сети с Вашей учетной записи временно
+            <b>ограничен</b> биллинговой системой. Возможно, это связано с
+            недостатком денежных средств на Вашем лицевом счёте.
+        </p>
+
+        <p>
+            В разделе <a href="https://ttnet.ru/users/internet">Абоненту</a> Вы можете:
+          <ul>
+            <li> <a href="https://ttnet.ru/users/internet">
+          <input class="pay_submit" value="оплатить" type="submit" style="border-radius: 3px;"></a> услуги доступа к сети
+            Интернет банковской картой</li>
+      <li>активировать <a href="https://ttnet.ru/users/internet">
+          <input class="pay_submit red" value="доверительный платёж" type="submit" style="border-radius: 3px;"></a></li>
+      <li>узнать о других способах оплаты</li>
+          </ul>
+        <p>
+            <b>Круглосуточная служба технической поддержки:</b><br>
+            +7(918) 255-65-19<br>
+            +7(86196) 7-44-43 (Тихорецк)
+        </p>
+    </div>
+</body>
+</html>

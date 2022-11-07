@@ -1,0 +1,149 @@
+{% macro make_logo(is_a) %}
+    <div id="logo">
+    {% if is_a %}
+        <a href="{{ url_for('index') }}">
+    {% endif %}
+        <img src="{{ url_for('static', filename='images/logo.svg') }}"
+             alt="ТелеТайм - Кабельное ТВ и Интернет">
+    {% if is_a %}
+        </a>
+    {% endif %}
+        <div id="tagline">Включи весь Мир!</div>
+    </div>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro big_menu(links) %}
+<ul id="big_menu">
+    {% for link in links %}
+    <li class="bm-entry" id="bme_{{ link.name }}">
+        <a class="circle-big" href="{{ url_for(link.href) }}">
+            <div class="bme-icon"></div>
+        </a>
+        <div class="circle-small"></div>
+        <a class="caption" href="{{ url_for(link.href) }}">
+            <span>{{ link.cap_big[0] }}</span>{{ link.cap_big[1:]|safe }}
+            {% if link.text %}
+            <div class="cap-text">{{ link.text|safe }}</div>
+            {% endif %}
+        </a>
+        <a class="circle-icon" href="{{ url_for(link.href) }}">
+            <div class="bme-icon"></div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro top_menu(links, active) %}
+<ul id="top_menu">
+    {% for link in links %}
+        {% set t = 'down' if loop.index % 2 == 0 else 'up' %}
+        {% set caption = '<span class="circle-small first-letter">' + (
+            link.cap_top or link.cap_big)[0] + '</span>' + (
+            link.cap_top or link.cap_big)[1:] %}
+        {% if active == link.name %}
+         <li class="m-entry {{ t }} active me-idx-{{ loop.index }}">
+            <div class="circle-big">
+                <div class="tme-icon"></div>
+            </div>
+            <div class="caption">
+                {{ caption|safe }}
+            </div>
+        </li>
+        {% else %}
+        <li class="m-entry {{ t }} me-idx-{{ loop.index }}">
+            <a href="{{ url_for(link.href) }}" class="circle-big">
+                <div class="tme-icon"></div>
+            </a>
+            <a href="{{ url_for(link.href) }}" class="caption">
+                {{ caption|safe }}
+            </a>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro left_menu(links, active) %}
+<div id="left_menu">
+  <nav>
+    <ul>
+      {% for link in links %}
+        {% if link.name == active %}
+          <li class="active">
+            <div class="lme">{{ link.text }}</div>
+          </li>
+        {% else %}
+          <li><a class="lme" href="{{ url_for(link.href) }}">{{ link.text }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro patriot_link(text) %}
+    <a href="{{ url_for('patriot') }}" class="patriot-link">
+        <span class="patriot-icon"></span>{{ text }}</a>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro news_pan(news_titles) %}
+<div id="news-pan">
+    <div id="np-header">
+        НОВОСТИ
+    </div>
+    <div id="np-topics">
+        {% for nt in news_titles %}
+        <div class="np-topic">
+            <div class="nt-link">
+                <a href="{{ url_for('news') }}{{ '#' + nt.name if loop.index != 1 else '' }}">
+                    {{ nt.caption or nt.title }}
+                </a>
+            </div>
+            <div class="nt-date">{{ nt.time|days_ago }}</div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    <div id="np-footer">
+        <a href="{{ url_for('news') }}">все новости ></a>
+    </div>
+</div>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro news_post(n_post) %}
+    <article class="news-post" id="{{ n_post.name }}">
+        <header>
+            <h2 class="np-title">{{ n_post.title }}</h2>
+            <div class="np-date">{{ n_post.time|days_ago }}</div>
+        </header>
+        <main>{{ n_post.content|md }}</main>
+        {% if n_post.sign %}
+        <footer>{{ n_post.sign|md }}</footer>
+        {% endif %}
+    </article>{% endmacro %}
+
+<!-- ======================================================================= -->
+
+{% macro fake_chat(talk) %}
+<div class="faq-chat">
+  <div class="chat-container">
+
+    {% for phrase in talk %}
+      <div class="chat-bubble-wrapper {{ 'question' if phrase.side == 'q' else 'answer' }}">
+        <div class="chat-bubble">
+          <div class="bbl-text">
+            {{ phrase.msg|md }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>{% endmacro %}

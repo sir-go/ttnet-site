@@ -1,0 +1,58 @@
+{% extends "_parts/_base.html" %}
+{% set title = "Подключение" %}
+
+{% set description = "Подключение к сети Интернет и кабельного телевидения в
+Тихорецком районе и Кореновске, подача заявки, заключение договора, технологии
+и сроки подключения" %}
+
+{% set keywords = "ТелеТайм, подключение дома, подключение квартиры, оптика в
+дом, оптика в квартиру, FTTx, FTTH, FTTB, ШПД, Интернет, КТВ, кабельное ТВ,
+кабельное телевидение, ctv" %}
+
+{% set top_active = 'connections' %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/fa-socials.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/sm_icons.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_pan.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('requests.static', filename='css/suggestions.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('requests.static', filename='css/font-awesome.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('requests.static', filename='css/form.css') }}"/>
+{% endblock %}
+
+{% from "_parts/_snippets.html" import sm_icon, news_pan %}
+
+{% block sidebar %}
+    <div id="sidebar">
+        {{ news_pan(news_titles) }}
+    </div>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    {{ 'Для подключения к сети кабельного ТВ или сети Интернет Вам необходимо оставить заявку по
+    [телефону](/contacts), электронной [почте](mailto:noc@tih.ru?subject=Заявка на подключение),
+    через [социальные сети](https://vk.com/app5708398_-149031821)<br>
+    или заполнив форму подключения'|md }}
+
+    {% include "ur_form_wrapped.html" %}
+    <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+
+    <p>
+        При наличии технической возможности подключения, выбрать удобный для
+        себя <a href="{{ url_for('tariffs_internet') }}">тарифный план</a>
+        и прийти в ближайший <a href="{{ url_for('contacts') }}">офис</a>
+        компании ТелеТайм для заключения договора на оказание услуг связи
+        (с собой нужно иметь паспорт).
+    <p>
+        В пределах указанного в договоре срока дежурный специалист предварительно
+        согласует с Вами дату монтажных работ и вышлет бригаду.
+    <p>
+        Убедительно просим Вас обеспечить беспрепятственный доступ специалиста в
+        квартиру.
+    <p>
+        По завершению монтажных работ, проверьте качество принимаемых каналов или
+        скорость и стабильность канала связи.
+</div>
+{% endblock %}

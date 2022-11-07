@@ -1,0 +1,53 @@
+#tp_panel {
+    padding: 2px 20px 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+noscript div {
+    max-width: 250px;
+    margin: auto;
+}
+
+#tp_panel input {
+    width: 95%;
+    line-height: 1.7;
+    padding: 0 5px;
+}
+
+#tp_submit {
+    width: 85% !important;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 16pt;
+    padding-bottom: 5px;
+}
+
+.panel-title {
+    background-color: #ecebeb;
+    text-align: center;
+    font-family: "KenyanCoffee", "Verdana", sans-serif;
+    font-size: 22pt;
+    padding: .5rem 0;
+    color: #8d2f31;
+}
+
+.panel-help {
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: green;
+    border: 2px solid;
+    /*margin-left: 10px;*/
+    padding: 0 9px;
+}
+
+.panel-help:hover {
+    background-color: green;
+    color: white;
+}

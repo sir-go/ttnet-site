@@ -1,0 +1,236 @@
+{% extends "cctv/_base.html" %}
+{% set left_active = 'leaflet' %}
+
+{% block content %}
+<div id="content">
+    <section id="ll-title">
+        <div id="ll-title-left">
+            <div id="ll-logo">
+                <div id="ll-logo-title">
+                    <span>ВИДЕО</span>КОНТРОЛЬ
+                </div>
+                <div id="ll-logo-for">
+                    <span>Для офисов и магазинов</span>
+                    <div>
+                        <img src="{{ url_for('static', filename='images/cctv/logo_cam.png') }}">
+                    </div>
+                </div>
+            </div>
+            <div id="ll-title-tagline">
+                Наблюдайте со своего смартфона,
+                что происходит в Вашей компании,
+                из любой точки земного шара.
+            </div>
+        </div>
+        <img src="{{ url_for('static', filename='images/cctv/hand.png') }}">
+    </section>
+    <section id="ll-get">
+        <div class="ll-sep">ПОЛУЧИТЕ</div>
+        <ul id="ll-get-bonuses">
+            <li class="ll-get-bonus">
+                <img src="{{ url_for('static', filename='images/cctv/get_c0.png') }}"
+                     alt="Кассы">
+                <p>Полный контроль кассовой деятельности
+            </li>
+            <li class="ll-get-bonus">
+                <img src="{{ url_for('static', filename='images/cctv/get_c1.png') }}"
+                     alt="Рабочие места">
+                <p>Контроль производительности сотрудников
+            </li>
+            <li class="ll-get-bonus">
+                <img src="{{ url_for('static', filename='images/cctv/get_c2.png') }}"
+                     alt="Торговые залы">
+                <p>Учёт посещаемости сотрудников и трафика клиентов
+            </li>
+            <li class="ll-get-bonus">
+                <img src="{{ url_for('static', filename='images/cctv/get_c3.png') }}"
+                     alt="Правонарушения">
+                <p>Контроль порядка и решение спорных вопросов
+            </li>
+        </ul>
+        Качество камеры позволяет разглядеть даже купюру в руках клиента
+    </section>
+    <section id="ll-where">
+        <div class="ll-sep">ГДЕ МНЕ НУЖНА КАМЕРА ВИДЕОНАБЛЮДЕНИЯ?</div>
+        <ul id="ll-where-icons">
+            <li class="ll-where-pan" id="ll-wp-cash">
+                <span class="ll-wp-icon"></span>
+                <span class="ll-wp-caption">Над кассой</span>
+            </li>
+            <li class="ll-where-pan" id="ll-wp-office">
+                <span class="ll-wp-icon"></span>
+                <span class="ll-wp-caption">В офисе</span>
+            </li>
+            <li class="ll-where-pan" id="ll-wp-mall">
+                <span class="ll-wp-icon"></span>
+                <span class="ll-wp-caption">В торговом зале</span>
+            </li>
+            <li class="ll-where-pan" id="ll-wp-parking">
+                <span class="ll-wp-icon"></span>
+                <span class="ll-wp-caption">На автостоянке</span>
+            </li>
+        </ul>
+        <div id="ll-where-how">
+            <span id="ll-wh-arrow">Как установить</span>
+            <span id="ll-wh-caption">
+                УСТАНОВКА КАМЕР И НАСТРОЙКА ОБОРУДОВАНИЯ ДЛЯ ВАС
+                <span>БЕСПЛАТНО</span>
+            </span>
+        </div>
+    </section>
+    <section id="ll-tariffs">
+        <div class="ll-sep">ВЫБЕРИТЕ УДОБНЫЙ ТАРИФ</div>
+        <ul id="ll-tariff-list">
+            <li id="ll-tar-cams-amount">
+                <div class="ll-tar-descr">
+                    Количество камер видеонаблюдения
+                </div>
+                <ul class="ll-tar-vars">
+                    <li>1 камера</li>
+                    <li>2 камеры</li>
+                    <li>3 камеры</li>
+                </ul>
+            </li>
+            <li class="ll-tar-pan">
+                <div class="ll-tar-header">
+                    <div class="ll-tar-type">тариф</div>
+                    <div class="ll-tar-title">
+                        <img src="{{ url_for('static',
+                        filename='images/cctv/tariff_icon_0.png') }}">
+                        <span class="ll-tar-caption">Первый</span>
+                    </div>
+                    <div class="ll-tar-descr">
+                        Вы получаете в пользование полный сервис с арендой камер
+                    </div>
+                </div>
+                <div class="ll-tar-vinfo">
+                    <div class="ll-tar-vdescr">
+                        Ежемесячная оплата
+                    </div>
+                    <div  class="ll-tar-voptions">
+                        <br>
+                        <ul class="ll-tar-vars">
+                            <li>1200</li>
+                            <li>1800</li>
+                            <li>2700</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="ll-tar-pan">
+                <div class="ll-tar-header">
+                    <div class="ll-tar-type">тариф</div>
+                    <div class="ll-tar-title">
+                        <img src="{{ url_for('static',
+                        filename='images/cctv/tariff_icon_1.png') }}">
+                        <span class="ll-tar-caption">Smart</span>
+                    </div>
+                    <div class="ll-tar-descr">
+                        Через 12 месяцев видеокамеры переходят в вашу
+                        собственность (лизинг)
+                    </div>
+                </div>
+                <div class="ll-tar-vinfo">
+                    <div class="ll-tar-vdescr">
+                        Ежемесячная оплата
+                    </div>
+                    <ul class="ll-tar-vtypes">
+                        <li>
+                            <div  class="ll-tar-voptions">
+                                <div class="ll-tar-vdescr">
+                                    В течение 1 года
+                                </div>
+                                <ul class="ll-tar-vars">
+                                    <li>2200</li>
+                                    <li>3800</li>
+                                    <li>5400</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div  class="ll-tar-voptions">
+                                <div class="ll-tar-vdescr">
+                                    Через год
+                                </div>
+                                <ul class="ll-tar-vars">
+                                    <li>600</li>
+                                    <li>1000</li>
+                                    <li>1400</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div id="ll-tar-remark">
+            Более 3-х камер — рассчитывается индивидуально по телефону 8(918) 255-65-19
+        </div>
+    </section>
+    <section id="ll-duration">
+        <div class="ll-sep">Выберите, сколько времени хранить видеозаписи</div>
+        <ul id="ll-duration-icons">
+            <li class="ll-duration-pan">
+                <div class="ll-dpan-circle">
+                <div class="ll-dpan-time">24 ч.</div>
+                    <p class="ll-dpan-caption">сутки
+                </div>
+                <p class="ll-dpan-descr">
+                    Бывает достаточно<br> при чутком контроле
+                <p class="ll-dpan-cost">
+                    БЕСПЛАТНО
+            </li>
+            <li class="ll-duration-pan">
+                <div class="ll-dpan-circle">
+                <div class="ll-dpan-time">7 д.</div>
+                    <p class="ll-dpan-caption">неделя
+                </div>
+                <p class="ll-dpan-descr">
+                    Оптимальный выбор для<br> хранения видеоархива
+                <p class="ll-dpan-cost">
+                    200 <span>₽</span> *
+            </li>
+            <li class="ll-duration-pan">
+                <div class="ll-dpan-circle">
+                <div class="ll-dpan-time">30 д.</div>
+                    <p class="ll-dpan-caption">месяц
+                </div>
+                <p class="ll-dpan-descr">
+                    Лучший выбор для ведения архива и разрешения всех спорных вопросов
+                <p class="ll-dpan-cost">
+                    500 <span>₽</span>
+            </li>
+        </ul>
+         <div id="ll-duration-remark">
+            * Стоимость добавляется к абонплате из расчета на 1 камеру
+         </div>
+        <hr>
+    </section>
+    <section id="ll-bonus">
+        <div id="ll-bonus-descr">
+            <p>БОНУС
+            <p>Подключая сервис видеоконтроля
+            <p>
+                Вы получаете БЕСПЛАТНОЕ подключение кассового <br>
+                аппарата и всего офиса к Интернет по самой<br>
+                современной технологии сверхскоростной<br>
+                оптической линии ТелеТайм
+        </div>
+        <img src="{{ url_for('static', filename="images/cctv/globe.png") }}">
+    </section>
+    <section id="ll-phones">
+        <div class="ll-phone-pan">
+            <div class="ll-phone-number">
+                <i class="glyph-phone"></i> 8(918) 481-98-84
+            </div>
+            <div class="ll-phone-remark">горячая линия</div>
+        </div>
+        <div class="ll-phone-pan">
+            <div class="ll-phone-number">
+                <i class="glyph-phone"></i> 8(918) 255-65-19
+            </div>
+            <div class="ll-phone-remark">для справок</div>
+        </div>
+    </section>
+</div>
+{% endblock %}

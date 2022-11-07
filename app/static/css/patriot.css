@@ -1,0 +1,97 @@
+#content {
+    text-align: justify;
+}
+
+#alert {
+    text-align: center;
+    color: white;
+    background-color: #036336;
+    padding: 10px;
+}
+
+.patriot-logo {
+    margin: 45px;
+}
+
+#ytPatriot {
+    height:294px;
+    margin-bottom: 1rem;
+}
+
+.warning {
+    font-weight: bold;
+    color: #c30000;
+}
+
+.pg_name {
+    color: #0000bf;
+}
+
+.leaf-l, .leaf-r, .leaf-c {
+    padding: 4ex 2ex;
+    margin-top: 0;
+    margin-bottom: -2ex;
+}
+
+.leaf-l {
+    width: 80%;
+    box-shadow: -10px 0 10px -10px rgba(22, 30, 99, 0.33);
+    border: 1px solid rgba(23, 54, 99, 0.5);
+    border-right: none;
+}
+
+.leaf-r {
+    width: 80%;
+    margin-left: auto;
+    box-shadow: 10px 0 10px -10px rgba(3, 99, 54, 0.3);
+    border: 1px solid rgba(3, 99, 54, 0.5);
+    border-left: none;
+}
+
+.lst {
+    padding-bottom: 4ex;
+    margin-bottom: -6ex;
+    border-bottom: none;
+    box-shadow: 10px -10px 10px -10px rgba(22, 30, 99, 0.33);
+}
+
+.fst {
+    padding-top: 1ex;
+    border-top: none;
+    box-shadow: -10px 10px 10px -10px rgba(22, 30, 99, 0.33);
+}
+
+.leaf-c {
+    /*margin-top: 3ex;*/
+    box-shadow: 10px 10px 10px -10px rgba(3, 99, 54, 0.3);
+    border: 1px solid rgba(3, 99, 54, 0.5);
+    border-top: none;
+}
+
+.actor {
+    font-weight: bold;
+}
+
+.leaf-l .actor {
+    color: #0075f9;
+}
+.leaf-r .actor {
+    color: #008044;
+}
+.leaf-c .actor {
+    color: #007db1;
+}
+
+#sm_welcome p {
+    font-size: 14px;
+    width: 45%;
+    margin-left: auto;
+}
+
+.player-title {
+    background-color: #ecebeb;
+    text-align: center;
+    font-family: "KenyanCoffee", "Verdana", sans-serif;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}

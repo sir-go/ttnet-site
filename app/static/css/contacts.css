@@ -1,0 +1,75 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#content h3 {
+    color: #7d7d7d;
+}
+
+#contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#contacts article {
+    width: 35%;
+    flex-shrink: 0;
+}
+
+#content section {
+    padding: .5ex 0;
+    margin: .5ex 0;
+}
+
+#content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1ex 0;
+}
+
+#content li {
+    /*margin-left: 3ex;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.schedule {
+    margin: 0 7ex !important;
+}
+
+.schedule h3 {
+    text-align: center;
+}
+
+.sch-entrties {
+    /*display: table;*/
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 60ex;
+    text-align: center;
+}
+
+.sch-entrties .dp-name {
+    text-align: left;
+    padding: .5ex 0;
+}
+
+.sch-entrties tbody tr {
+    border-top: 1px solid lightgray;
+}
+.sch-entrties .dayoff {
+    color: #a53131;
+    font-weight: bold;
+}
+
+.sch-entrties tbody tr:hover {
+    background-color: white;
+}
+
+.socials {
+    text-align: center;
+}

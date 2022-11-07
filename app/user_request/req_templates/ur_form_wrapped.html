@@ -1,0 +1,26 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+        <div id="flashes_wrapper">
+            <ul class="alert_flashes">
+                {% for message in messages %}
+                <li class="flash_msg">
+                    <div class="msg_container">
+                        <i class="fa fa-check icon"></i>
+                        <div>{{ message|safe }}</div>
+                    </div>
+                    <div class="msg_footer">
+                        <a href="{{ url_for('connections') }}"
+                           class="btn_next">Заполнить ещё одну</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    {% else %}
+
+        {% include "user_request_form.html" %}
+
+    {% endif %}
+{% endwith %}

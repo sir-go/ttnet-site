@@ -1,0 +1,16 @@
+{% extends "users/_base.html" %}
+{% block sidebar %}
+<div id="sidebar">
+    {{ left_menu(left_links, 'internet') }}
+    {% include 'pay_panel.html' %}
+    {% include 'tp_panel.html' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<p style="margin: 2rem; font-size: 16pt">
+    Sorry but this functionality is removed from
+    the repo because of security reasons.
+</p>
+
+{% endblock %}

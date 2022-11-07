@@ -1,0 +1,96 @@
+{% extends "tariffs/_base.html" %}
+{% set title = "Тарифы - кабельное ТВ" %}
+
+{% set description = "Тарифы, акции, скидки и условия предоставления услуг ООО ТелеТайм,
+подключения кабельного ТВ в Тихорецком районе и Кореновске" %}
+
+{% set keywords = "ТелеТайм, тарифы, условия, акции, цены, кабельное телевидение" %}
+
+{% set left_active = 'ctv' %}
+
+{% block content %}
+<div id="content">
+    <h2>Тихорецк</h2>
+
+    <div class="t-group">
+        <div class="tariffs">
+            <div class="tariff-pan">
+                <div class="t-name">
+                    подключение (доступ к сети)
+                </div>
+                 <div class="t-price tp-extra-padding">
+                    <span class="val-price">500</span>
+                    <sup>₽</sup>
+                </div>
+            </div>
+            <div class="tariff-pan">
+                <div class="t-name">
+                    монтаж
+                </div>
+                 <div class="t-price t-price tp-extra-padding">
+                     <sub>от</sub>
+                     <span class="val-price">100</span>
+                     <sup>₽</sup>
+                </div>
+            </div>
+            <div class="tariff-pan">
+                <div class="t-name">
+                    абонентская плата
+                </div>
+                 <div class="t-price">
+                     <span class="val-price">150</span>
+                     <sup>₽/мес</sup>
+                </div>
+            </div>
+            <div class="tariff-pan">
+                <div class="t-name">
+                    * абонентская плата на тарифе «Наш Друг»
+                </div>
+                 <div class="t-price">
+                     <span class="val-price sale">100</span>
+                     <sup>₽/мес</sup>
+                </div>
+            </div>
+        </div>
+        <div class="remark">* если Вы - наш Интернет абонент</div>
+    </div>
+
+    <h2>Кореновск</h2>
+
+    <div class="t-group">
+{#        <div class="caption"></div>#}
+        <div class="tariffs">
+            <div class="tariff-pan">
+                <div class="t-name">
+                    подключение (доступ к сети)
+                </div>
+                 <div class="t-price tp-extra-padding">
+                    <span class="val-price">300</span>
+                    <sup>₽</sup>
+                </div>
+            </div>
+            <div class="tariff-pan">
+                <div class="t-name">
+                    монтаж
+                </div>
+                 <div class="t-price t-price tp-extra-padding">
+                     <sub>от</sub>
+                     <span class="val-price">100</span>
+                     <sup>₽</sup>
+                </div>
+            </div>
+            <div class="tariff-pan">
+                <div class="t-name">
+                    абонентская плата
+                </div>
+                 <div class="t-price">
+                     <span class="val-price">150</span>
+                     <sup>₽/мес</sup>
+                </div>
+            </div>
+        </div>
+{#        <div class="remark"></div>#}
+    </div>
+    <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+</div>
+{% endblock %}

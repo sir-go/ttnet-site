@@ -1,0 +1,49 @@
+{% extends "_parts/_base.html" %}
+{% set title = "Контакты" %}
+
+{% set description = "Контактная информация для связи с офисами компании и круглосуточной технической поддержкой,
+адреса офисов и графики работы" %}
+
+{% set keywords = "ТелеТайм, контакты, адрес, офис, график работы, часы работы, выходные, со скольки, до скольки,
+обед, как работает, телефон, куда звонить, техническая поддержка, саппорт, круглосуточно" %}
+
+{% set top_active = 'contacts' %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_pan.css') }}"/>
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/fa-socials.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/sm_icons.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts.css') }}"/>
+{% endblock %}
+
+{% from "_parts/_snippets.html" import sm_icon, news_pan %}
+
+{% block sidebar %}
+    <div id="sidebar">
+        {{ news_pan(news_titles) }}
+    </div>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <div id="contacts">
+        {% include "contacts/_tih.html" %}
+        {% include "contacts/_kor.html" %}
+    </div>
+    <article>
+        <section class="socials">
+            <h3>Мы в социальных сетях</h3>
+            <div>
+            {{ '[вконтакте](https://vk.com/club147764331) [одноклассники](https://ok.ru/teletaym)'|md }}
+            </div>
+        </section>
+    </article>
+    {% include "contacts/_schedule.html" %}
+</div>
+{% endblock %}
+
+{% block add_scripts %}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=----&lang=ru_RU&load=Geolink"
+            type="text/javascript"></script>
+{% endblock %}

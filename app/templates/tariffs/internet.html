@@ -1,0 +1,122 @@
+{% extends "tariffs/_base.html" %}
+{% set title = "Тарифы - Интернет" %}
+
+{% set description = "Тарифы, акции, скидки и условия предоставления услуг ООО ТелеТайм, бесплатного подключения
+безлимитного доступа к Интернет в Тихорецком районе и Кореновске" %}
+
+{% set keywords = "ТелеТайм, тарифы, условия, акции, бесплатное подключение, цены, безлимитный Интернет" %}
+
+{% set left_active = 'internet' %}
+
+{% set mbps = "<abbr title=\"мегабит в секунду
+1 байт = 8 бит, поэтому:
+100 мегабит в секунду = 12.5 мегабайт в секунду \">Мбит/с</abbr>" %}
+
+{% block add_styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+  {{ super() }}
+{% endblock %}
+
+{% block add_head_scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/select-tariffs.js') }}"></script>
+{% endblock %}
+
+{% macro tariff_group(tgroup) %}
+    <div class="t-group">
+        {% if tgroup.caption %}
+          <div class="caption">
+              {{ tgroup.caption|safe }}
+          </div>
+        {% endif %}
+        <div class="tariffs">
+        {% for t in tgroup.tariffs %}
+            <div class="tariff-pan">
+                <span class="t-name">
+                    {{ t.name }}
+                </span>
+                <span class="t-speed">
+                    <sub>до</sub>
+                    <span class="val-speed">{{ t.bw }}</span>
+                    <sup>{{ mbps|safe }}</sup>
+                </span>
+                <span class="t-price">
+                    <span class="val-price">{{ t.price }}</span>
+                    <sup>₽/мес</sup>
+                </span>
+            </div>
+        {% endfor %}
+        </div>
+        {% if tgroup.rem %}
+        <div class="remark">
+            {{ tgroup.rem|safe }}
+        </div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% block content %}
+    <div id="content">
+      <label>
+        <select id="ctSelect" class="hidden">
+          <option selected disabled>Выберите населённый пункт</option>
+          <option value="Tih">Тихорецк</option>
+          <option value="Kor">Кореновск</option>
+          <option value="Nrj">Новорождественская</option>
+          <option value="TihVil">Садовый, Зеленый, Шоссейный, Терновская</option>
+{#          <option disabled>─────────────────────</option>#}
+{#          <option value="Blg">Белая Глина</option>#}
+        </select>
+      </label>
+
+      <noscript><h2>Тихорецк</h2><hr/></noscript>
+
+      {% from "tariffs/_tg_tih.html" import tgroups %}
+      <div id="tgViewTih" class="tg-view">
+        {% for tg in tgroups %}
+            {{ tariff_group(tg) }}
+        {% endfor %}
+        <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+      </div>
+
+      <noscript><h2>Садовый, Зеленый, Шоссейный, Терновская</h2><hr/></noscript>
+
+      {% from "tariffs/_tg_tihvil.html" import tgroups %}
+      <div id="tgViewTihVil" class="tg-view">
+        {% for tg in tgroups %}
+            {{ tariff_group(tg) }}
+        {% endfor %}
+          <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+      </div>
+
+      <noscript><h2>Кореновск</h2><hr/></noscript>
+
+      {% from "tariffs/_tg_kor.html" import tgroups %}
+      <div id="tgViewKor" class="tg-view">
+        {% for tg in tgroups %}
+            {{ tariff_group(tg) }}
+        {% endfor %}
+          <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+      </div>
+
+{#      <noscript><h2>Белая Глина</h2><hr/></noscript>#}
+{##}
+{#      {% from "tariffs/_tg_blg.html" import tgroups %}#}
+{#      <div id="tgViewBlg" class="tg-view">#}
+{#        {% for tg in tgroups %}#}
+{#            {{ tariff_group(tg) }}#}
+{#        {% endfor %}#}
+{#      </div>#}
+
+      <noscript><h2>Новорождественская</h2><hr/></noscript>
+
+      {% from "tariffs/_tg_nrj.html" import tgroups %}
+      <div id="tgViewNrj" class="tg-view">
+        {% for tg in tgroups %}
+            {{ tariff_group(tg) }}
+        {% endfor %}
+          <div style="text-align: right; width: 100%">Предложение не является публичной офертой</div>
+      </div>
+    </div>
+{% endblock %}

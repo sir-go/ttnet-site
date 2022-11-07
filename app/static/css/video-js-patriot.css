@@ -1,0 +1,8 @@
+/*.vjs-default-skin .vjs-volume-control { display: none; }*/
+/*.vjs-default-skin .vjs-volume-panel-horizontal { display: none; }*/
+
+.clappr-container {
+    display: block;
+    width: 100%;
+    height: 390px;
+}

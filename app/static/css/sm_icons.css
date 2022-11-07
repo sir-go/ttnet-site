@@ -1,0 +1,20 @@
+[class^='sm-link'] {
+    color: white;
+    padding: 0.1em 0.6em 0.2em 0.6em;
+    margin: 0 3px;
+    /*vertical-align: middle;*/
+    /*font-family: monospace;*/
+    border-radius: 4px;
+    /*font-size: smaller;*/
+}
+
+[class^='sm-link'],
+[class^='sm-link']:hover {
+    text-decoration: none;
+}
+
+[class$='-ok'] { background-color: #F2720C }
+[class$='-vk'] { background-color: #4C75A3 }
+[class$='-youtube'] { background-color: #E42B26 }
+[class$='-instagram'] { background-color: #902077 }
+[class$='-twitter'] { background-color: #00ABF1 }

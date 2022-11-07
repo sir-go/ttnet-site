@@ -1,0 +1,35 @@
+{% extends "_parts/_base.html" %}
+
+{% set description = "ООО ТелеТайм - современные услуги в области связи и информационных технологий:
+безлимитный Интернет, кабельное телевидение, видеонаблюдение в Тихорецке и Кореновске" %}
+
+{% set keywords = "ТелеТайм, связь, Интернет, безлимитный Интернет, телевидение, видеонаблюдение, видеоконтроль,
+провайдер, Тихорецк, Кореновск, Парковый, Зелёный, Садовый, Кубанский, Шоссейный, Терновская,
+Интернет в частном секторе" %}
+
+{% block add_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/big_menu.css") }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_pan.css') }}"  />
+{% endblock %}
+
+{% from "_parts/_snippets.html" import make_logo, big_menu, news_pan %}
+
+{% block body %}
+<body>
+    <main>
+        <div id="left">
+            {{ make_logo() }}
+            {{ news_pan(news_titles) }}
+        </div>
+        <div id="right">
+            {{ big_menu(links) }}
+        </div>
+    </main>
+    <footer>
+        <div id="footer-bg" class="ft-{{ request.endpoint }}"></div>
+        © ООО ТелеТайм {{ get_current_year() }}
+    </footer>
+</body>
+{% endblock %}
+

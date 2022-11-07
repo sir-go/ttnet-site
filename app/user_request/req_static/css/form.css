@@ -1,0 +1,294 @@
+#ur_form {
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid gray;
+    /*width: 40rem;*/
+    /*max-width: 95%;*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.alert_flashes {
+    position: relative;
+    border: 1px solid green;
+    background-color: white;
+    list-style: none;
+    box-shadow: 2px 9px 20px 0 rgba(0, 128, 0, 0.17);
+    margin: 0 0 2rem;
+    padding-left: 1rem;
+}
+
+.alert_flashes .flash_msg {
+    margin: .5rem 0;
+    color: #01460e;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert_flashes .flash_msg p {
+    margin: 6px 5px;
+}
+
+.alert_flashes .flash_msg samp {
+    color: black;
+    font-family: monospace;
+    border: 1px solid lightgray;
+    padding: 2px 8px;
+}
+
+.alert_flashes .flash_msg .icon {
+    color: green;
+    font-size: 40px;
+    margin-right: 18px;
+}
+
+.alert_flashes .msg_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.alert_flashes .msg_footer {
+    text-align: right;
+    padding: 0 10px;
+}
+
+#flashes_wrapper a.btn_next {
+    cursor: pointer;
+    padding: 6px 16px;
+    background-color: whitesmoke;
+}
+
+#flashes_wrapper a.btn_next:hover {
+    text-decoration: none;
+    background-color: lightgray;
+}
+
+#ur_form #services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#ur_form .form-control {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*margin: .5rem;*/
+    margin-bottom: 1rem;
+}
+
+#ur_form .form-control label {
+    width: 30%;
+}
+
+/*#ur_form .fctl-label-req span {*/
+/*color: darkgray;*/
+/*}*/
+
+#ur_form .form-control.fctl-warning .invalid {
+    color: #a53131 !important;
+}
+
+#ur_form .form-control.fctl-warning .fa {
+    color: #a53131 !important;
+}
+
+#ur_form .form-control.fctl-warning .input-field {
+    border-color: #a53131 !important;
+}
+
+#ur_form .fctl-label-req {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ur_form .input-field {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #8c8c8c;
+}
+
+#ur_form .input-field i.fa {
+    font-size: 16px;
+    color: #6b6b6b;
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#ur_form .form-control input,
+#ur_form .form-control textarea {
+    /*border-radius: 3px;*/
+    border: none;
+    border-left: 1px solid lightgray;
+    padding: .4rem .6rem;
+    box-shadow: inset 0 0 10px rgba(218, 218, 218, 0.6);
+}
+
+#ur_form .form-control input[type="text"],
+#ur_form .form-control textarea {
+    border-left-color: lightgray;
+    width: 100%;
+}
+
+#ur_form .form-control input:focus,
+#ur_form .form-control textarea:focus {
+    outline: 2px solid rgba(0, 128, 0, 0.44);
+    /*border-color: rgb(0, 144, 0);*/
+}
+
+#ur_form #remark {
+    resize: vertical;
+    max-height: 15rem;
+}
+
+#ur_form #remark_len {
+    display: inline-block;
+    text-align: right;
+    width: 6em;
+}
+
+#ur_form #remark_len.lbl-warn {
+    color: #a53131;
+}
+
+#ur_form #remark_len.lbl-calm {
+    color: darkgray;
+}
+
+#ur_form input[type="submit"] {
+    border: none;
+    /*border-radius: 3px;*/
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    font-size: 16pt;
+    padding: 5px;
+}
+
+#ur_form .t-price {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: -6px;
+    margin-bottom: -20px;
+    font-size: 10px;
+    visibility: hidden;
+}
+
+#ur_form .val-price {
+    font-size: 1.5em;
+    color: green;
+    margin: 0 .3em;
+}
+
+.cool-checkbox input {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.cool-checkbox input:focus {
+    outline: none !important;
+}
+
+.cool-checkbox label {
+    font-size: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.cool-checkbox label:hover {
+    color: #036336;
+}
+
+.cool-checkbox label:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "\f00c";
+    color: transparent;
+    margin-right: .4em;
+    border: 1px solid #8c8c8c;
+    background: white;
+    box-shadow: inset 0 0 10px rgba(218, 218, 218, 0.6);
+}
+
+.cool-checkbox input:focus ~ label {
+    color: #036336;
+}
+
+.cool-checkbox input:focus ~ label:before {
+    border-color: #05904f !important;
+    box-shadow: inset 0 0 10px rgba(145, 255, 156, 0.6);
+}
+
+.cool-checkbox input:checked ~ label:before {
+    color: #036336;
+    opacity: 1;
+}
+
+#ur_form #map {
+    display: none;
+    /*border-radius: 3px;*/
+    /*border: 1px solid lightgray;*/
+    height: 400px;
+    /*margin-bottom: 1rem;*/
+    /*margin-top: .5rem;*/
+}
+
+#ur_form .ymap-done-btn {
+    font-weight: bold;
+    color: #036336;
+}
+
+#ur_form .ymap-cancel-btn {
+    color: red;
+}
+
+#ur_form #geo_info {
+    display: none;
+    text-align: right;
+    height: 0;
+    /*position: absolute;*/
+    /*right: 0;*/
+}
+
+#ur_form #geo_info .link-span {
+    cursor: pointer;
+    color: #0078ff;
+    border-bottom: dashed 1px #0078ff;
+}
+
+#ur_form #geo_info samp.coord {
+    font-size: 10px;
+}
+
+#ur_form #geo_info samp.btn {
+    border: 1px solid #cacaca;
+    background-color: white;
+    padding: 1px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#ur_form #geo_info samp.done {
+    color: #036336;
+}
+
+#ur_form #geo_info samp.cancel {
+    color: red;
+}

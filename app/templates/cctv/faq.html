@@ -1,0 +1,22 @@
+{% extends "cctv/_base.html" %}
+{% set title = "Видеоконтроль - Вопросы и ответы" %}
+
+{% set description = "Вопросы и ответы об услуге видеоконтроля" %}
+
+{% set left_active = "faq" %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/fa-socials.css') }}" />
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/sm_icons.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+{% endblock %}
+
+{% from "_parts/_snippets.html" import fake_chat %}
+
+{% block content %}
+<div id="content">
+    {{ fake_chat(cctv_faq) }}
+</div>
+{% endblock %}

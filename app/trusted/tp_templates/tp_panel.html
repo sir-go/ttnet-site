@@ -1,0 +1,58 @@
+{% set tp_is_disabled = False %}
+
+{% if not tp_is_disabled %}
+{% if get_current_date() > 14 %}
+<div style="padding: 1rem; text-align: center; border-top: 1px solid rgba(0, 0, 0, 0.4);">
+    Активация <a href="{{ url_for('users_help') }}#trusted"
+                 style="cursor: help;">доверительного платежа</a>
+    доступна только в период с 1-го по 14-е число месяца
+</div>
+{% else %}
+<noscript>
+    <div>
+        Форма активации <a href="{{ url_for('users_help') }}#trusted"
+                           style="cursor: help;">
+        доверительного платежа</a> доступна только с включенным JavaScript
+    </div>
+</noscript>
+
+<form id="tp_panel" action="{{ url_for('trusted.confirm') }}" method="post"
+      hidden>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+    <p style="text-align: center">
+        <span class="panel-title">доверительный платёж</span>
+        <br>
+        <span style="font-size: 14px;">
+{#          <a href="{{ url_for('users_help') }}#trusted"
+               style="cursor: help;">#}
+          временный доступ<br>
+          с отрицательным балансом<br>
+{#          </a>#}
+        </span>
+    </p>
+
+    <p class="field">
+        <label for="tp_extid">лицевой счёт</label><br>
+        <input type="text" name="extid" id="tp_extid" maxlength="20"
+               min="1" inputmode="numeric"
+               placeholder="по договору" required>
+    </p>
+    <p>
+        <input id="tp_submit" type="submit" value="активировать">
+        <a class="panel-help" href="{{ url_for('users_help') }}#trusted">?</a>
+    </p>
+</form>
+
+<script type="text/javascript">
+    document.getElementById('tp_panel').style.display = 'block';
+</script>
+{% endif %}
+
+{% else %}
+<div style="text-align: center; padding: 20px 20px 5px; border-top: 1px solid lightgray;">
+    активация <a href="{{ url_for('users_help') }}#trusted"
+                 style="cursor: help;">доверительного платежа</a>
+    временно недоступна
+</div>
+{% endif %}

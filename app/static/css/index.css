@@ -1,0 +1,26 @@
+main {
+    flex-direction: row;
+    /*width: 1010px;*/
+    justify-content: space-between;
+}
+
+#left {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#footer-bg {
+    height: 445px;
+    background: url("../images/index_bottom.png") no-repeat left;
+}
+
+#news-pan {
+    max-width: 265px;
+}
+
+#np-header {
+    padding: 1px
+}

@@ -1,0 +1,36 @@
+<noscript>
+    <div>
+        Оплата банковской картой доступна только с включенным JavaScript
+    </div>
+</noscript>
+
+<form id="pay_panel" action="{{ url_for('sberpay.confirm') }}" method="post"
+      hidden>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+    <p style="text-align: center">
+    <span class="panel-title">оплата банковской картой <br>
+      доступа к сети Интернет</span>
+    </p>
+
+    <p class="field">
+        <label for="extid">лицевой счёт</label><br>
+        <input type="text" name="extid" id="extid" maxlength="20"
+               min="1" inputmode="numeric"
+               placeholder="по договору" required>
+    </p>
+    <p class="field">
+        <label for="paysum">сумма в рублях</label><br>
+        <input type="number" name="paysum" id="paysum" min="10" step="0.01"
+               placeholder="не менее 10" pattern="[0-9]+([\.,][0-9]+)?"
+               required>
+    </p>
+    <p>
+        <input id="pay_submit" type="submit" value="оплатить">
+        <a class="panel-help" href="{{ url_for('users_help') }}#cardpay">?</a>
+    </p>
+</form>
+
+<script type="text/javascript">
+    document.getElementById('pay_panel').style.display = 'block';
+</script>

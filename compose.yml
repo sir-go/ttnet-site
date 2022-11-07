@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    image: mongo:3.7.9-xenial
+    container_name: mongo
+    user: 1000:1000
+    environment:
+      MONGO_INITDB_DATABASE: 'ttnet'
+    volumes:
+      - ${PWD}/db/init-auth.js:/docker-entrypoint-initdb.d/init-auth.js:ro
+      - ${PWD}/db/data:/data/db
+#      - ${PWD}/db/dump:/mnt
+    expose:
+      - '27017'
+#    ports: ['27017:27017']
+    networks: {net}
+
+  app:
+    build:
+      context: .
+    container_name: ttnet-site-app
+    volumes:
+      - ${PWD}/app-conf.json:/srv/app/conf.json:ro
+    networks: {net}
+    expose:
+      - '8081'
+    ports: ['8081:8081']
+    depends_on:
+      - db
+
+networks: {net}

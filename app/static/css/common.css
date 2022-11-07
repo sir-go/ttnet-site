@@ -1,0 +1,231 @@
+@font-face {
+    font-family: "Verdana";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url("../fonts/Verdana/Verdana.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/Verdana/Verdana.woff2") format("woff2"),
+        url("../fonts/Verdana/Verdana.woff") format("woff"),
+        url("../fonts/Verdana/Verdana.ttf") format("truetype"),
+        url("../fonts/Verdana/Verdana.svg#Verdana") format("svg");
+}
+
+@font-face {
+    font-family: "Verdana";
+    font-style: normal;
+    font-weight: bold;
+    src:
+        url("../fonts/Verdana-Bold/Verdana-Bold.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/Verdana-Bold/Verdana-Bold.woff2") format("woff2"),
+        url("../fonts/Verdana-Bold/Verdana-Bold.woff") format("woff"),
+        url("../fonts/Verdana-Bold/Verdana-Bold.ttf") format("truetype"),
+        url("../fonts/Verdana-Bold/Verdana-Bold.svg#Verdana") format("svg");
+}
+
+@font-face {
+    font-family: "KenyanCoffee";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url("../fonts/KenyanCoffee/KenyanCoffee.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/KenyanCoffee/KenyanCoffee.woff2") format("woff2"),
+        url("../fonts/KenyanCoffee/KenyanCoffee.woff") format("woff"),
+        url("../fonts/KenyanCoffee/KenyanCoffee.ttf") format("truetype"),
+        url("../fonts/KenyanCoffee/KenyanCoffee.svg#Intro") format("svg");
+}
+
+body, aside, header, main {
+    display: flex;
+}
+
+body main {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+body header {
+    /*width: 100%;*/
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    /*font-family: "Trebuchet MS", "Helvetica", "Arial", sans-serif;*/
+    /*font-size: 15px;*/
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #f8f8f8 url("../images/index_bg_more.png") repeat-x bottom;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    /*justify-content: flex-start;*/
+    /*align-items: center;*/
+    width: 1010px;
+    margin: auto;
+    padding: 10px;
+    /*text-align: justify;*/
+}
+
+table {
+    /*margin: 15px 0;*/
+}
+
+th {
+    font-weight: normal;
+}
+
+#sidebar {
+    padding-top: 14px;
+    width: 294px;
+    flex-shrink: 0;
+    background: #ededed;
+    background: -moz-linear-gradient(top,
+        rgba(237,237,237,1) 0%,
+        rgba(237,237,237,1) 95%,
+        rgba(237,237,237,0) 98%,
+        rgba(237,237,237,0) 100%
+    );
+    background: -webkit-linear-gradient(top,
+        rgba(237,237,237,1) 0%,
+        rgba(237,237,237,1) 95%,
+        rgba(237,237,237,0) 98%,
+        rgba(237,237,237,0) 100%
+    );
+    background: linear-gradient(to bottom,
+        rgba(237,237,237,1) 0%,
+        rgba(237,237,237,1) 95%,
+        rgba(237,237,237,0) 98%,
+        rgba(237,237,237,0) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#00ededed',GradientType=0 );
+}
+
+footer {
+    /*width: 100%;*/
+    font-size: 10pt;
+    margin-top: 20px;
+}
+
+#footer-bg {
+    height: 500px;
+    display: block;
+}
+
+#footer-bg[class^="ft-users"] {
+    background: url("../images/users/back_pic.png") no-repeat left;
+}
+
+#footer-bg[class^="ft-sberpay"] {
+    background: url("../images/users/back_pic.png") no-repeat left;
+}
+
+#footer-bg[class^="ft-tariffs"] {
+    background: url("../images/tariffs.png") no-repeat left;
+}
+
+#footer-bg.ft-patriot {
+    background: url("../images/patriot/back_pic.png") no-repeat left;
+    height: 390px;
+}
+
+#footer-bg.ft-about {
+    background: url("../images/about.png") no-repeat left;
+    height: 600px;
+}
+
+#footer-bg.ft-news {
+    background: url("../images/cables.png") no-repeat left;
+    height:330px;
+}
+
+#footer-bg.ft-contacts {
+    background: url("../images/worker.png") no-repeat left;
+    height:300px;
+}
+
+#footer-bg[class^="ft-cctv"] {
+    background: url("../images/tariffs.png") no-repeat left;
+}
+
+#footer-bg.ft-connections {
+    background: url("../images/connections.png") no-repeat left;
+    height: 515px;
+}
+
+#logo * {
+    outline: none;
+}
+
+#logo img {
+    margin-top: 20px;
+    width: 305px;
+    margin-bottom: 30px;
+}
+#logo #tagline {
+    font-size: 18pt;
+    font-style: italic;
+}
+
+iframe {
+    border: none;
+}
+
+a {
+    color: #025f02;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+abbr {
+    cursor: help;
+}
+
+#content {
+    width: 716px;
+    padding: 0 0 0 25px;
+}
+
+
+.md-p p {
+
+}
+
+ul.unmark li {
+    list-style-type: none;
+}
+
+.patriot-link {
+    white-space: nowrap;
+}
+.patriot-link .patriot-icon {
+    padding: 0;
+    margin: -3px 3px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../images/patriot/patriot_icon.png") no-repeat left;
+}

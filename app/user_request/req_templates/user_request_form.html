@@ -1,0 +1,71 @@
+<form method="POST" action="{{ url_for('connections') }}" id="ur_form">
+    {{ form.csrf_token }}
+    {{ form.ddata }}
+    {{ form.geo_q }}
+    {{ form.geo_lat }}
+    {{ form.geo_lon }}
+    {{ form.geo_zoom }}
+
+    <div class="form-control {% if form.errors.remark %}fctl-warning{% endif %}">
+    {{ form.services.label }}
+        {{ form.services }}
+        <div class="t-price">
+            всего <span class="val-price"> 100 </span> ₽/мес
+        </div>
+    </div>
+
+    <div class="form-control">
+    {{ form.address.label }}
+        <div class="input-field">
+            <i class="fa fa-home"></i>{{ form.address }}
+        </div>
+        <div id="geo_info"></div>
+        <div id="map"></div>
+    </div>
+
+
+    <div class="form-control">
+    {{ form.name.label }}
+        <div class="input-field">
+            <i class="fa fa-user"></i>{{ form.name(size=20) }}
+        </div>
+    </div>
+
+    <div class="form-control {% if form.errors.contacts %}fctl-warning{% endif %}">
+        <div class="fctl-label-req">
+            {{ form.contacts.label }}
+            <span class="invalid">{{ form.errors.contacts|join("<br> ") or '* обязательно' }}</span>
+        </div>
+        <div class="input-field">
+            <i class="fa fa-phone"></i>{{ form.contacts }}
+        </div>
+    </div>
+
+    <div class="form-control {% if form.errors.remark %}fctl-warning{% endif %}">
+        <div class="fctl-label-req">
+            <div>
+                {{ form.remark.label }} <span id="remark_len"></span>
+            </div>
+            <span class="invalid">{{ form.errors.remark|join("<br> ") }}</span>
+        </div>
+        <div class="input-field">
+        <i class="fa fa-comment"></i>{{ form.remark }}
+        </div>
+    </div>
+
+    <input type="submit" value="Подать заявку">
+</form>
+
+{% block add_scripts %}
+
+<!--[if lt IE 10]>
+<script src="{{ url_for('requests.static', filename='js/jquery.xdomainrequest.min.js') }}"></script>
+<![endif]-->
+<script src="{{ url_for('requests.static', filename='js/jquery.suggestions.min.js') }}"></script>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey={{ymap_api_key}}&lang=ru_RU"></script>
+
+{#<script src="{{ url_for('static', filename='js/jquery.blockUI.js') }}"></script>#}
+<script src="{{ url_for('requests.static', filename='js/ur_form.js') }}"></script>
+
+{% endblock %}

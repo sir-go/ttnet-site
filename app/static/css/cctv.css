@@ -1,0 +1,365 @@
+@font-face {
+  font-family: 'Candara';
+  src: url('../fonts/Candara/Candara.eot');
+  src: url('../fonts/Candara/Candara.woff2') format('woff2'),
+       url('../fonts/Candara/Candara.woff') format('woff'),
+       url('../fonts/Candara/Candara.ttf') format('truetype'),
+       url('../fonts/Candara/Candara.svg#Candara') format('svg'),
+       url('../fonts/Candara/Candara.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#content {
+    font-family: Candara, sans-serif;
+    font-size: 12pt;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#content section {
+    margin-bottom: 1.5em;
+}
+
+#content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.ll-sep {
+    width: 100%;
+    background-color: #1c6434;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 5px;
+    line-height: 1.3;
+}
+
+#ll-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 200px;
+}
+
+#ll-title-left {
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ll-logo {
+    width: 100%;
+}
+
+#ll-logo-for {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#ll-logo-for span {
+    color: #1c6434;
+    font-size: 24px;
+}
+
+#ll-logo-title {
+    width: 330px;
+    text-align: center;
+    font-size: 28px;
+    height: 35px;
+    background-color: #231f20;
+    color: white;
+    margin: 14px 0 0 -1px;
+}
+
+#ll-logo-title span {
+    color: #0aa03c;
+}
+
+#ll-title-tagline {
+    width: 16em;
+}
+
+#ll-get {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ll-get-bonuses {
+    margin-top: 5ex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#ll-get-bonuses .ll-get-bonus {
+    text-align: center;
+}
+
+#ll-get-bonuses .ll-get-bonus p {
+    font-size: 11pt;
+    width: 12em;
+    margin: 1em auto;
+}
+
+#ll-where-icons {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ll-where-icons .ll-where-pan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#ll-where-icons .ll-wp-icon {
+    display: inline-block;
+    background: url("../images/cctv/where_icons.png") no-repeat left;
+    width: 60px;
+    height: 60px;
+}
+
+#ll-where-icons #ll-wp-cash .ll-wp-icon {
+    background-position-x: 0
+}
+
+#ll-where-icons #ll-wp-office .ll-wp-icon {
+    background-position-x: -60px;
+}
+
+#ll-where-icons #ll-wp-mall .ll-wp-icon {
+    background-position-x: -120px;
+}
+
+#ll-where-icons #ll-wp-parking .ll-wp-icon {
+    background-position-x: -180px;
+}
+
+#ll-where-how {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ll-wh-caption {
+    font-size: 16pt;
+    text-align: left;
+    line-height: 1;
+    width: 300px;
+}
+
+#ll-wh-caption span {
+    color: red;
+    font-weight: bold;
+}
+
+#ll-wh-arrow {
+    width: 340px;
+    height: 52px;
+    background: url("../images/cctv/how_arrow.png") no-repeat right;
+    color: white;
+    font-size: 24pt;
+    display: inline-block;
+    line-height: 1.9;
+    text-align: center;
+}
+
+#ll-tariff-list {
+    width: 90%;
+    margin: 1em auto;
+}
+
+.ll-tar-pan,
+.ll-tar-vars {
+    font-size: 16pt;
+    display: flex;
+    flex-direction: column;
+}
+
+#ll-tar-cams-amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.ll-tar-pan {
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+.ll-tar-type {
+    font-size: 15px;
+    line-height: 1;
+    padding-left: 52px;
+}
+
+.ll-tar-title {
+    font-size: 26pt;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.ll-tar-title img {
+    margin: 10px;
+}
+
+.ll-tar-vtypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.ll-tar-vtypes li {
+    width: 100%;
+}
+
+.ll-tar-vinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.ll-tar-descr,
+.ll-tar-vdescr,
+.ll-tar-voptions {
+    font-size: 10pt;
+}
+
+.ll-tar-descr,
+.ll-tar-vdescr {
+    padding: 5px 10px;
+}
+
+.ll-tar-vars li {
+    border-bottom: 2px solid lightgray;
+}
+.ll-tar-vars li:last-child {
+    border-bottom: none;
+}
+
+#ll-tar-remark,
+#ll-duration-remark {
+    padding-left: 2em;
+}
+
+#ll-duration-icons {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+#ll-duration-icons .ll-duration-pan:first-child .ll-dpan-cost {
+    color: red;
+}
+
+.ll-duration-pan {
+    text-align: center;
+    min-width: 100px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ll-dpan-circle {
+    width: 100px;
+    height:100px;
+    background: url("../images/cctv/duration_circle.png") no-repeat;
+}
+
+.ll-dpan-time {
+    color: green;
+    width: 45px;
+}
+
+.ll-dpan-descr {
+    margin-bottom: auto;
+}
+
+.ll-dpan-cost {
+    font-size: 16pt;
+}
+
+.ll-dpan-cost span {
+    font-size: 12pt;
+}
+
+#ll-duration hr {
+    height: 2px;
+    background-color: #036336;
+    border: none;
+    margin: 1em 2em;
+}
+
+#ll-bonus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#ll-bonus img {
+    flex-shrink: 0;
+}
+
+#ll-bonus-descr p {
+    margin: 0;
+}
+
+#ll-bonus-descr p:nth-child(1) {
+    color: red;
+    font-size: 44pt;
+    line-height: 1;
+}
+
+#ll-bonus-descr p:nth-child(2) {
+    font-size: 24pt;
+    line-height: 1;
+    margin: 5px -50px 8px 0;
+}
+
+#ll-bonus-descr p:nth-child(3) {
+}
+
+#ll-bonus-logo {
+    background: url("../images/cctv/globe.png") no-repeat right;
+}
+
+.glyph-phone {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background: url("../images/cctv/phone_icon.png") no-repeat;
+}
+
+#ll-phones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.ll-phone-pan {
+    font-size: 20pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ll-phones .ll-phone-pan:first-child .ll-phone-remark {
+    color: red;
+}

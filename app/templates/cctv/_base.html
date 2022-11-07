@@ -1,0 +1,24 @@
+{% extends "_parts/_base.html" %}
+
+{% set title = "Видеоконтроль" %}
+
+{% set description = "Видеоконтроль - круглосуточное видеонаблюдение за объектами с доступом к архиву записей." %}
+
+{% set top_active = 'cctv' %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cctv.css') }}"  />
+{% endblock %}
+
+{% set left_links = [
+  {'text': 'Описание', 'href': 'cctv', 'name': 'leaflet'},
+  {'text': 'Вопросы и ответы', 'href': 'cctv_faq', 'name': 'faq'},
+] %}
+{% from "_parts/_snippets.html" import left_menu %}
+
+{% block  sidebar %}
+<div id="sidebar">
+    {{ left_menu(left_links, left_active) }}
+</div>
+{% endblock %}

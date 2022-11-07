@@ -1,0 +1,17 @@
+#left_menu ul {
+    /*width: 294px;*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#left_menu .lme {
+    display: block;
+    padding: 6px 22px;
+    font-size: 11pt;
+}
+
+#left_menu li.active {
+    background-color: #6d6d6d;
+    color: white;
+}

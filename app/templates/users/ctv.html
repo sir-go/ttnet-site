@@ -1,0 +1,24 @@
+{% extends "users/_base.html" %}
+
+{% set title = "Кабельное ТВ" %}
+{% set description = "" %}
+{% set keywords = "ТелеТайм, кабельное телевидение, КТВ, кабельное ТВ, ctv" %}
+
+{% set top_active = "users" %}
+
+{% block add_styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/emoji.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+{% endblock %}
+
+{% block sidebar %}
+    <div id="sidebar">
+    {{ left_menu(left_links, 'ctv')  }}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% from "_parts/_snippets.html" import fake_chat %}
+      {{ fake_chat(chat_ctv) }}
+{% endblock %}
