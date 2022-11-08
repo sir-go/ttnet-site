@@ -3,6 +3,5 @@
   "TESTING": false,
   "SECRET_KEY": "-change-it-",
   "TEMPLATES_AUTO_RELOAD": false,
-  "MONGO_URI": "mongodb://admin:admin@db:27017/ttnet",
-  "MONGO_CONNECT": false
+  "MONGO_URI": "mongodb://admin:admin@db:27017/ttnet"
 }
