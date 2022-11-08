@@ -2,15 +2,15 @@ version: "3.8"
 
 services:
   db:
-    image: mongo:3.7.9-xenial
+    image: mongo:3.6
     container_name: mongo
     user: 1000:1000
     environment:
       MONGO_INITDB_DATABASE: 'ttnet'
     volumes:
-      - ${PWD}/db/init-auth.js:/docker-entrypoint-initdb.d/init-auth.js:ro
+      - ${PWD}/db/initdb.d/:/docker-entrypoint-initdb.d/
       - ${PWD}/db/data:/data/db
-#      - ${PWD}/db/dump:/mnt
+      - ${PWD}/db/dump:/mnt
     expose:
       - '27017'
 #    ports: ['27017:27017']

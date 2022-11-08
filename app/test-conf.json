@@ -1,7 +1,7 @@
 {
   "DEBUG": true,
-  "TESTING": false,
+  "TESTING": true,
   "SECRET_KEY": "-change-it-",
   "TEMPLATES_AUTO_RELOAD": false,
-  "MONGO_URI": "mongodb://admin:admin@db:27017/ttnet"
+  "MONGO_URI": "mongodb://admin:admin@localhost:27017/ttnet"
 }

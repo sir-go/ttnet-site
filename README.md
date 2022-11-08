@@ -22,7 +22,7 @@ company.
 ## Screencast
 ![](ttnet-sc.gif)
 
-## Build and run
+## Test, build and run
 ### Standalone
 > Mongodb required
 
@@ -32,7 +32,7 @@ Edit `app/conf.json` config before start
 virtualenv venv
 source ./venv/bin/activate
 pip install -r requirements.txt
-python run.py
+python -m pytest && python run.py
 ```
 will run the app on http://localhost:5000
 

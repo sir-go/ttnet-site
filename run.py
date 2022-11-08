@@ -1,4 +1,4 @@
-from app import standalone
+from app import create_app
 
 if __name__ == '__main__':
-    standalone().run()
+    create_app().run()

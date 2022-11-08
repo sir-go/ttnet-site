@@ -4,31 +4,42 @@ from flask import Flask, render_template, Response, current_app, make_response
 from flask import redirect, url_for, request
 from flask_wtf.csrf import CSRFProtect
 import flask_pymongo as pmg
+from pymongo.errors import ServerSelectionTimeoutError
 import logging
 
-import app.jinja_lib
+from app import jinja_lib
 from app.user_request.controller import proc_form
 
-import app.plugins
+from app import plugins
 
 
-def create_app(conf_path: str) -> Flask:
+def create_app(conf_path: str = 'conf.json') -> Flask:
+
     _app = Flask(__name__)
 
     _app.config.from_file(conf_path, load=json.load)
 
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    _app.logger.handlers = gunicorn_logger.handlers
+    _app.logger.setLevel(gunicorn_logger.level)
+
     CSRFProtect(_app)
-    mongo = pmg.PyMongo(_app)
+
+    mongo_db = None
+    if not _app.testing:
+        try:
+            mongo_db = pmg.PyMongo(_app, serverSelectionTimeoutMS=5000).db
+            mongo_db.command('ping')
+        except ServerSelectionTimeoutError:
+            _app.logger.warn('!!! NO DB CONNECTION')
+            mongo_db = None
+
     jinja_lib.map_globals(_app)
     _app.url_map.strict_slashes = False
 
     plugins.sberpay(_app)
     plugins.us_requests(_app)
     plugins.tpay(_app)
-
-    gunicorn_logger = logging.getLogger('gunicorn.error')
-    _app.logger.handlers = gunicorn_logger.handlers
-    _app.logger.setLevel(gunicorn_logger.level)
 
     @_app.route('/sitemap.xml')
     def sitemap():
@@ -73,18 +84,19 @@ def create_app(conf_path: str) -> Flask:
         )
 
     def _get_news_titles(amount=None):
-        if mongo.db is None:
+        if mongo_db is None:
             return []
         if amount is not None:
-            return mongo.db.news.find(
+            return mongo_db.news.find(
                 {}, {'content': 0}).sort('time', pmg.DESCENDING).limit(amount)
         else:
-            return mongo.db.news.find(
+            return mongo_db.news.find(
                 {}, {'content': 0}).sort('time', pmg.DESCENDING)
 
     @_app.route('/')
     def index():
-        return render_template("index.html", news_titles=_get_news_titles(3))
+        return render_template("index.html",
+                               news_titles=_get_news_titles(3))
 
     @_app.route('/about')
     def about():
@@ -103,14 +115,14 @@ def create_app(conf_path: str) -> Flask:
     def users_internet():
         return render_template(
             "users/internet.html",
-            chat_data=mongo.db.chat_internet.find()
-            if mongo.db is not None else {})
+            chat_data=mongo_db.chat_internet.find()
+            if mongo_db is not None else [])
 
     @_app.route('/users/ctv')
     def users_ctv():
         return render_template(
-            "users/ctv.html", chat_ctv=mongo.db.chat_ctv.find()
-            if mongo.db is not None else {})
+            "users/ctv.html", chat_ctv=mongo_db.chat_ctv.find()
+            if mongo_db is not None else [])
 
     @_app.route('/tariffs')
     def tariffs():
@@ -128,8 +140,8 @@ def create_app(conf_path: str) -> Flask:
     def news():
         news_posts = []
         news_titles = []
-        if mongo.db is not None:
-            news_posts = mongo.db.news.find(
+        if mongo_db is not None:
+            news_posts = mongo_db.news.find(
                 {}, {'caption': 0}).sort('time', pmg.DESCENDING)
             news_titles = _get_news_titles()
         return render_template(
@@ -168,11 +180,9 @@ def create_app(conf_path: str) -> Flask:
 
     @_app.route('/cctv/faq')
     def cctv_faq():
-        return render_template("cctv/faq.html",
-                               cctv_faq=mongo.db.chat_cctv_faq.find())
+        return render_template(
+            "cctv/faq.html",
+            cctv_faq=mongo_db.chat_cctv_faq.find()
+            if mongo_db is not None else {})
 
     return _app
-
-
-def standalone():
-    return create_app('conf.json')
