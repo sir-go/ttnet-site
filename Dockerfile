@@ -9,4 +9,4 @@ COPY ./app ./app
 
 EXPOSE 8081/tcp
 
-ENTRYPOINT ["gunicorn", "-w 4", "-b", "0.0.0.0:8081", "app:standalone()"]
+ENTRYPOINT ["gunicorn", "-w 4", "-b", "0.0.0.0:8081", "app:create_app()"]

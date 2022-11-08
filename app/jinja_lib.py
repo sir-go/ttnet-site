@@ -2,7 +2,7 @@ import datetime
 import re
 
 import misaka
-from flask import request
+from flask import request, Flask
 from jinja2.filters import do_mark_safe
 
 from app.emoji_dict import emoji_classes
@@ -15,14 +15,16 @@ sm_names = {
     'twitter': 'twitter'
 }
 
-re_smlink_pattern = r"\[(?P<text>[^]]*)\]\((?P<href>((\w+\:\/\/)*(\w+\.)*(?P<sm>" + \
+re_smlink_pattern = r"\[(?P<text>[^]]*)\]" \
+                    r"\((?P<href>((\w+\:\/\/)*(\w+\.)*(?P<sm>" + \
                     r"|".join(sm_names.keys()) + \
                     r")\.[^)]*))\)"
 re_smlink = re.compile(re_smlink_pattern, re.IGNORECASE)
-sm_a_tmpl = '<a href = "{href}" class ="sm-link-{sm}"><i class ="fa fa-{sm_class}" aria-hidden="true"></i> {text}</a>'
+sm_a_tmpl = '<a href = "{href}" class ="sm-link-{sm}">' \
+            '<i class ="fa fa-{sm_class}" aria-hidden="true"></i> {text}</a>'
 
 
-def map_globals(app):
+def map_globals(app: Flask):
     app.jinja_env.globals.update(dict(
         get_current_year=get_current_year,
         get_current_date=get_current_date,
