@@ -5,6 +5,8 @@
 the code is extremely **obsolete** and not suitable for third-party use 
 > the only purpose of this repo is the **demonstration**
 
+[![Tests](https://github.com/sir-go/ttnet-site/actions/workflows/python-app.yml/badge.svg)](https://github.com/sir-go/ttnet-site/actions/workflows/python-app.yml)
+
 This is a Flask-based old-school web-site of TeleTime Ltd.
 company.
 
